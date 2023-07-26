@@ -875,3 +875,15 @@ $ hdfs dfs -find /public/retail_db
 /public/retail_db/products
 /public/retail_db/products/part-00000
 ```
+
+```SHELL
+$ hdfs dfs -cat /public/retail_db/departments/part-00000
+
+
+2,Fitness
+3,Footwear
+4,Apparel
+5,Golf
+6,Outdoors
+7,Fan Shop
+```
