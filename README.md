@@ -226,6 +226,7 @@ http://127.0.0.1:8888/lab?token=214abe261cd501fa56acdcac10e86b1c943c00a59b89d013
 ```
 
 - Port seems like 8888
+- Token will be use when jupyter is up and running first time.
 - Open Cloud9 new terminal.
 
 ```SHELL
@@ -246,4 +247,10 @@ Escape character is '^]'.
 - Save Rule.
 - Click on running EC2 instance
 - Find, Copy -> Public IPv4 DNS -> and paste to the browser. Add :8888 port end of DNS
-- 
+
+
+- Now we can see the jupyter.
+- Paste token and login.
+
+  
+
