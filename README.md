@@ -682,9 +682,12 @@ $ jps
 ```
 
 ```SHELL
-hdfs dfs -mkdir -p /user/${USER}
-hdfs dfs -put /opt/hadoop/etc/hadoop /user/${USER}
-hdfs dfs -cat /user/${USER}/hadoop/core-site.xml
-hdfs dfs -rm -R -skipTrash /user/${USER}/hadoop
-hdfs dfs -ls /user/${USER}
+$ hdfs dfs -mkdir -p /user/${USER}
+$ hdfs dfs -put /opt/hadoop/etc/hadoop /user/${USER}
+$ hdfs dfs -cat /user/${USER}/hadoop/core-site.xml
+$ hdfs dfs -ls /user/${USER}
+$ hdfs dfs -rm -R -skipTrash /user/${USER}/hadoop
+$ hdfs dfs -ls /user/${USER}
+
+output have to be emtpy
 ```
