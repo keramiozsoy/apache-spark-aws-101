@@ -222,7 +222,7 @@ $ jupyter lab --ip 0.0.0.0
 [I 2023-07-26 17:59:55.120 ServerApp] jupyterlab | extension was successfully loaded.
 [I 2023-07-26 17:59:55.121 ServerApp] Serving notebooks from local directory: /home/ubuntu/environment/delab
 [I 2023-07-26 17:59:55.121 ServerApp] Jupyter Server 1.13.1 is running at:
-http://127.0.0.1:8888/lab?token=214abe261cd501fa56acdcac10e86b1c943c00a59b89d013
+http://127.0.0.1:8888/lab?token=2614abe261cd501fa56acdcac10e86b1c943c00a59b89d013
 ```
 
 - Port seems like 8888
@@ -251,6 +251,49 @@ Escape character is '^]'.
 
 - Now we can see the jupyter.
 - Paste token and login.
+- Now you can use juphyter lab.
 
-  
+8 - Click Notebook Pyhon3
 
+Write and hit ctrl + enter
+
+```python
+print('hello world')
+```
+
+hello world
+
+```python
+from platform import python_version
+python_version()
+```
+
+
+- Go to E2C instance terminal
+- Ctrl  C to exit
+
+9 - Jupyter Lab running on background.
+
+If you would like to run Jupyter Lab as a background process 
+
+```SHELL
+$ nohup jupyter lab --ip 0.0.0.0 &
+```
+
+Let's see token 
+
+```SHELL
+$ tail nohup.out
+or
+$ view nohup.out 
+``` 
+
+Close Jupyter Lab
+
+```SHELL
+$ ps -ef |grep nohup
+```
+
+```SHELL
+$ kill PID (second columnt)
+```
