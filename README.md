@@ -1061,6 +1061,31 @@ Logging initialized using configuration in jar:file:/opt/apache-hive-3.1.2-bin/l
 Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
 hive> 
 ```
+```SHELL
+exit
+```
+
+```SHELL
+$ schematool -dbType postgres -initSchema
+
+
+
+
+
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-3.1.2-bin/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.3.0/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Metastore connection URL:        jdbc:postgresql://localhost:6432/metastore
+Metastore Connection Driver :    org.postgresql.Driver
+Metastore connection User:       hive
+org.apache.hadoop.hive.metastore.HiveMetaException: Failed to get schema version.
+Underlying cause: org.postgresql.util.PSQLException : The authentication type 10 is not supported. Check that you have configured the pg_hba.conf file to include the client's IP address or subnet, and that it is using an authentication scheme supported by the driver.
+SQL Error code: 0
+Use --verbose for detailed stacktrace.
+*** schemaTool failed ***
+````
 
 
 
