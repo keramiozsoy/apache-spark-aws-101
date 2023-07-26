@@ -785,3 +785,93 @@ $ start-yarn.sh
 Starting resourcemanager
 Starting nodemanagers
 ```
+
+```SHELL
+$ jps
+```
+
+```SHELL
+10149 DataNode
+9975 NameNode
+12392 ResourceManager
+10426 SecondaryNameNode
+12557 NodeManager
+13103 Jps
+```
+
+```SHELL
+$ hdfs dfs -ls /user
+
+Found 1 items
+drwxr-xr-x   - ubuntu supergroup          0 2023-07-26 22:28 /user/ubuntu
+```
+- Now we have single node Hadoop cluster.
+- We need to shutdown the server when it is not in use.
+- If we don't shutdown,we will end up paying more money to AWS :)
+===
+ Don't shutdown directy server, before we should run below command.
+If you don't hdfs might get corrupted.
+===
+
+```SHELL
+$ stop-yarn.sh
+$ stop-hdfs.sh
+```
+
+If you want to up again 
+
+```SHELL
+start-dfs.sh
+start-yarn.sh
+```
+
+
+
+
+- Let's add sample data
+
+We have downloaded to our instance.
+```SHELL
+$ cd $HOME
+$ git clone https://github.com/dgadiraju/retail_db.git
+$ ls -ltr retail_db
+
+$ sudo rm -rf /data/retail_db
+$ sudo mkdir -p /data/retail_db
+$ ls -ltr /data
+$ sudo cp -rf retail_db/departments /data/retail_db
+$ sudo cp -rf retail_db/categories /data/retail_db
+$ sudo cp -rf retail_db/products /data/retail_db
+$ sudo cp -rf retail_db/orders /data/retail_db
+$ sudo cp -rf retail_db/order_items /data/retail_db
+$ sudo cp -rf retail_db/customers /data/retail_db
+
+```
+
+- Create HDFS directory by name /public and copy retail_db from local /data folder to HDFS /public folder.
+
+```SHELL
+$ hdfs dfs -mkdir -p /public
+$ hdfs dfs -put /data/retail_db /public
+$ hdfs dfs -ls /public/retail_db/orders
+```SHELL
+
+```SHELL
+$ hdfs dfs -find /public/retail_db
+
+
+
+/public/retail_db
+/public/retail_db/categories
+/public/retail_db/categories/part-00000
+/public/retail_db/customers
+/public/retail_db/customers/part-00000
+/public/retail_db/departments
+/public/retail_db/departments/part-00000
+/public/retail_db/order_items
+/public/retail_db/order_items/part-00000
+/public/retail_db/orders
+/public/retail_db/orders/part-00000
+/public/retail_db/products
+/public/retail_db/products/part-00000
+```
