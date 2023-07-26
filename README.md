@@ -932,3 +932,66 @@ docker start cluster_util_db
 ```SHELL
 docker logs -f cluster_util_db
 ```
+
+- You can validate connectivity to Postgres database by running this command.
+
+```SHELL
+docker exec \
+    -it cluster_util_db \
+    psql -U postgres
+```
+
+- Let us create a database for Hive Metastore using Postgres Database Server just created.
+
+```SHELL
+CREATE DATABASE metastore;
+CREATE USER hive WITH ENCRYPTED PASSWORD 'itversity';
+GRANT ALL ON DATABASE metastore TO hive;
+```
+
+```SHELL
+
+\l
+\q
+
+
+                                              List of databases
+   Name    |  Owner   | Encoding |  Collate   |   Ctype    | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+------------+------------+------------+-----------------+-----------------------
+ metastore | postgres | UTF8     | en_US.utf8 | en_US.utf8 |            | libc            | =Tc/postgres         +
+           |          |          |            |            |            |                 | postgres=CTc/postgres+
+           |          |          |            |            |            |                 | hive=CTc/postgres
+
+
+exit
+```
+
+- Let us also setup client on the host to validate connectivity to the postgres database running as part of docker.
+
+```SHELL
+$ sudo apt install postgresql-client -y
+```
+- We can use this command to validate connectivity to postgres database running in Docker container from the host.
+
+```SHELL
+telnet localhost 6432
+```
+```SHELL
+psql -h localhost \
+    -p 6432 \
+    -d metastore \
+    -U hive \
+    -W
+
+itversity
+
+\q
+```
+
+- Add hive configuration to .profile
+
+```SHELL
+$ cd $HOME
+$ vi .profile
+$ export HIVE_HOME=/opt/hive
+$ export PATH=$PATH:${HIVE_HOME}/bin
