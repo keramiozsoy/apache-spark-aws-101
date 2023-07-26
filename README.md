@@ -131,7 +131,7 @@ tmpfs            388M     0  388M   0% /run/user/1000
 - :)
   
 ```SHELL
-df -h
+$ df -h
 Filesystem       Size  Used Avail Use% Mounted on
 udev             1.9G     0  1.9G   0% /dev
 tmpfs            388M  824K  387M   1% /run
@@ -146,3 +146,93 @@ tmpfs            1.9G     0  1.9G   0% /sys/fs/cgroup
 tmpfs            388M     0  388M   0% /run/user/1000
 ```
 
+7 - Setup Jupyter Lab on Cloud9
+- Cloud 9
+- Search on the bar
+- open terminal
+
+```SHELL
+python3
+```
+run to exit below command
+```SHELL
+exit()
+```
+
+```SHELL
+$ mkdir delab
+$ cd delab
+```
+
+
+```SHELL
+$ python3 -m venv delab-venv
+$ find delab-venv/
+
+
+$ find delab-venv/
+delab-venv/
+delab-venv/bin
+delab-venv/bin/pip3
+delab-venv/bin/pip
+delab-venv/bin/easy_install
+delab-venv/bin/pip3.6
+delab-venv/bin/activate
+...
+
+```
+
+```SHELL
+$ ls -ltr delab-venv/bin
+total 32
+lrwxrwxrwx 1 ubuntu ubuntu   16 Jul 26 17:49 python3 -> /usr/bin/python3
+lrwxrwxrwx 1 ubuntu ubuntu    7 Jul 26 17:49 python -> python3
+-rwxrwxr-x 1 ubuntu ubuntu  271 Jul 26 17:49 easy_install-3.6
+-rwxrwxr-x 1 ubuntu ubuntu  271 Jul 26 17:49 easy_install
+-rwxrwxr-x 1 ubuntu ubuntu  243 Jul 26 17:49 pip3.6
+-rwxrwxr-x 1 ubuntu ubuntu  243 Jul 26 17:49 pip3
+-rwxrwxr-x 1 ubuntu ubuntu  243 Jul 26 17:49 pip
+-rw-r--r-- 1 ubuntu ubuntu 2449 Jul 26 17:49 activate.fish
+-rw-r--r-- 1 ubuntu ubuntu 1285 Jul 26 17:49 activate.csh
+-rw-r--r-- 1 ubuntu ubuntu 2229 Jul 26 17:49 activate
+```
+
+Let's activate python env.
+
+```SHELL
+$ source delab-venv/bin/activate
+```
+Let's install jupyterlab
+
+```SHELL
+$ python -m pip install --upgrade pip
+$ pip install jupyterlab
+```
+
+
+```SHELL
+$ jupyter lab --ip 0.0.0.0
+
+[I 2023-07-26 17:59:54.819 ServerApp] jupyterlab | extension was successfully linked.
+[I 2023-07-26 17:59:54.828 ServerApp] Writing Jupyter server cookie secret to /home/ubuntu/.local/share/jupyter/runtime/jupyter_cookie_secret
+[I 2023-07-26 17:59:55.090 ServerApp] nbclassic | extension was successfully linked.
+[I 2023-07-26 17:59:55.115 ServerApp] nbclassic | extension was successfully loaded.
+[I 2023-07-26 17:59:55.116 LabApp] JupyterLab extension loaded from /home/ubuntu/environment/delab/delab-venv/lib/python3.6/site-packages/jupyterlab
+[I 2023-07-26 17:59:55.116 LabApp] JupyterLab application directory is /home/ubuntu/environment/delab/delab-venv/share/jupyter/lab
+[I 2023-07-26 17:59:55.120 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2023-07-26 17:59:55.121 ServerApp] Serving notebooks from local directory: /home/ubuntu/environment/delab
+[I 2023-07-26 17:59:55.121 ServerApp] Jupyter Server 1.13.1 is running at:
+http://127.0.0.1:8888/lab?token=214abe261cd501fa56acdcac10e86b1c943c00a59b89d013
+```
+
+- Port seems like 8888
+- Open Cloud9 new terminal.
+
+```SHELL
+$ telnet localhost 8888
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+```
+
+-
