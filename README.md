@@ -291,9 +291,23 @@ $ view nohup.out
 Close Jupyter Lab
 
 ```SHELL
-$ ps -ef |grep nohup
+$ jobs
+$ fg
+$ crtl - c 
 ```
 
+
+
+10 - Introduction to Single Node Hadoop Cluster
+
+- Cloud9
+- Search on the bar
+- open terminal
+
 ```SHELL
-$ kill PID (second columnt)
+$ sudo apt-get install wget
 ```
+
+
+
+
