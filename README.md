@@ -815,7 +815,7 @@ If you don't hdfs might get corrupted.
 
 ```SHELL
 $ stop-yarn.sh
-$ stop-hdfs.sh
+$ stop-dfs.sh
 ```
 
 If you want to up again 
