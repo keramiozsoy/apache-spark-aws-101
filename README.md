@@ -895,7 +895,7 @@ E )  Download and Install Hive
 
 - https://hive.apache.org
 
-- ```SHELL
+```SHELL
 $ wget https://archive.apache.org/dist/hive/hive-3.1.2/apache-hive-3.1.2-bin.tar.gz
 $ ls -ltr
 $ tar xzf apache-hive-3.1.2-bin.tar.gz
@@ -903,5 +903,32 @@ $ rm apache-hive-3.1.2-bin.tar.gz
 $ sudo mv -f apache-hive-3.1.2-bin /opt
 $ sudo chown ${USER}:${USER} -R /opt/apache-hive-3.1.2-bin
 $ sudo ln -s /opt/apache-hive-3.1.2-bin /opt/hive
+```
 
+F ) Setup Database For Hive Metastore
+
+- We can setup single session database for Hive Metastore. However, it have limitations and might get easily corrupted.
+- Once we setup Postgres database, we can configure Hive Metastore using the Postgres database.
+- Make sure the user is member of docker group. If the user is just added, make sure to restart the session (exit and relogin using SSH).
+
+```SHELL
+$ id ${USER}
+$ sudo usermod -aG docker ${USER}
+```
+
+```SHELL
+docker pull postgres
+```
+```SHELL
+docker create \
+    --name cluster_util_db \
+    -p 6432:5432 \
+    -e POSTGRES_PASSWORD=itversity \
+    postgres
+```
+```SHELL
+docker start cluster_util_db
+```
+```SHELL
+docker logs -f cluster_util_db
 ```
