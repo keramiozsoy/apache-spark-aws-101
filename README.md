@@ -91,12 +91,38 @@ Connected to localhost.
 - Now, Public IPv4 DNS will not be change.
 - Click the running instance. Try to reboot instance. You will use same Public IPv4 DNS
 
+6 - AWS Cloud9
+- Search on the bar 
+- open terminal
 
+```SHELL
+$ df -h
+Filesystem       Size  Used Avail Use% Mounted on
+udev             1.9G     0  1.9G   0% /dev
+tmpfs            388M  824K  387M   1% /run
+/dev/nvme0n1p1   9.6G  5.6G  4.0G  59% /
+tmpfs            1.9G     0  1.9G   0% /dev/shm
+tmpfs            5.0M     0  5.0M   0% /run/lock
+tmpfs            1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop0        25M   25M     0 100% /snap/amazon-ssm-agent/6563
+/dev/loop2        56M   56M     0 100% /snap/core18/2785
+/dev/loop1        54M   54M     0 100% /snap/snapd/19457
+/dev/nvme0n1p15  105M  5.3M  100M   5% /boot/efi
+tmpfs            388M     0  388M   0% /run/user/1000
+```
 
-
-
- 
-
+- Look at / (root) 
+- we would like to increase storage, we are able to use Amazon EBS storage.
+-  Go to EC2 Instance
+-  Click running instance
+-  Click section Storage
+-  Click Block Devices
+-  Click Volume (10 GB)
+-  Edit name exising volume as
+-  Click Actions -> Modify Volume
+-  Increase size from 10 GiB to 32 Gib.
+-  Modify.
+-   
   
 
 
