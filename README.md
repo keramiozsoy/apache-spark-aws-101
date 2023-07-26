@@ -127,7 +127,22 @@ tmpfs            388M     0  388M   0% /run/user/1000
 - Go to EC2 Instance
 - Click running instance
 - Click Instance Stat -> Reboot Instance
-- 
+- Look at / (root)
+- :)
   
-
+```SHELL
+df -h
+Filesystem       Size  Used Avail Use% Mounted on
+udev             1.9G     0  1.9G   0% /dev
+tmpfs            388M  824K  387M   1% /run
+/dev/nvme0n1p1    31G  5.6G   26G  19% /
+tmpfs            1.9G     0  1.9G   0% /dev/shm
+tmpfs            5.0M     0  5.0M   0% /run/lock
+tmpfs            1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/loop0        25M   25M     0 100% /snap/amazon-ssm-agent/6563
+/dev/loop2        54M   54M     0 100% /snap/snapd/19457
+/dev/loop1        56M   56M     0 100% /snap/core18/2785
+/dev/nvme0n1p15  105M  5.3M  100M   5% /boot/efi
+tmpfs            388M     0  388M   0% /run/user/1000
+```
 
