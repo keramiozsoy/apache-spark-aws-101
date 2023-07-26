@@ -307,6 +307,19 @@ $ crtl - c
 ```SHELL
 $ sudo apt-get install wget
 ```
+```SHELL
+$ sudo apt-get install openjdk-8-jdk -y
+
+- choose correct version for jre and jdk.
+
+```SHELL
+$ sudo update-alternatives --config java
+$ java -version
+
+$ sudo update-alternatives --config javac
+$ javac -version
+```
+
 
 
 
