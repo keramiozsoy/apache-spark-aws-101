@@ -481,3 +481,24 @@ $ vi  /opt/hadoop/etc/hadoop/hdfs-site.xml
 ```
 
 
+
+- check JAVA_HOME is valid
+
+```SHELL
+$ find /usr/lib/jvm -name javac
+
+there is/are java(s) 
+```
+
+```SHELL
+$ echo $JAVA_HOME
+
+output will be empty.
+```
+
+
+
+
+
+
+
