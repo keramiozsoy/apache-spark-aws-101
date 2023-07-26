@@ -691,3 +691,8 @@ $ hdfs dfs -ls /user/${USER}
 
 output have to be emtpy
 ```
+
+
+- We have downloaded and installed a Apache Hadoop related binaries and we also we have configured HDFS and started HDFS
+- We need to update two XML files for Apache Hadoop YARN.
+- 
