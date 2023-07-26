@@ -27,6 +27,8 @@
 4 - Open terminal on AWS Cloud9
 - whenever you provisioned an instance on aws, you will be getting The Apache HTTP Server up and running.
 
+
+```SHELL
 $ sudo systemctl status apache2
 ● apache2.service - The Apache HTTP Server
    Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
@@ -47,3 +49,4 @@ $ sudo systemctl status apache2
 $ telnet localhost 80
 Trying 127.0.0.1...
 Connected to localhost.
+```
