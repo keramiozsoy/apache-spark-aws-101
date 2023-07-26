@@ -65,7 +65,23 @@ Connected to localhost.
 - Type : HTTP
 - Source: My IP ( it means, It will get your IP address, and it will connect only you.)
 - Save Rule.
+- Click on running EC2 instance
+- Find, Copy -> Public IPv4 DNS -> and paste to the browser.
+- it works :) ( you will see Apache2 Default Page)
+
+- We are able to access the page until the instance shutown. Because the IP will change.
+- If we don't want to face this issue, we can create Elastic IP.
+
+4 - EC2 Instance
+- Search on the bar
+- Click on running EC2 instance
+- Click Instance State and Stop Instance on top of page.
+- The instance will start automatically, because of Cloud9 is already active.
+- Lets check the ip and public IPv4 DNS are complately different.
 
 
+ 
+
+  
 
 
