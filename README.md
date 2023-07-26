@@ -538,9 +538,34 @@ export HADOOP_OS_TYPE=${HADOOP_OS_TYPE:-$(uname -s)}
 ```
 
 
+- Format HDFS so that directories for Namenode, Secondary Namenode as well as Datanode are created.
+
+```SHELL
+$ ls -ltr /opt/hadoop/dfs/
+
+No such file or directory
+```
 
 
+```SHELL
+$ hdfs --help
+```
+
+```SHELL
+hdfs namenode -format
+```
+
+```SHELL
+find /opt/hadoop/dfs
 
 
-
+output
+/opt/hadoop/dfs
+/opt/hadoop/dfs/name
+/opt/hadoop/dfs/name/current
+/opt/hadoop/dfs/name/current/fsimage_0000000000000000000
+/opt/hadoop/dfs/name/current/seen_txid
+/opt/hadoop/dfs/name/current/fsimage_0000000000000000000.md5
+/opt/hadoop/dfs/name/current/VERSION
+```
 
