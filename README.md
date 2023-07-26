@@ -771,3 +771,17 @@ vi /opt/hadoop/etc/hadoop/mapred-site.xml
 </configuration>
 
 ```
+
+- Let us start YARN and validate to see if the components related to YARN are started or not.
+
+- Let's start YARN and validate
+
+```SHELL
+$ start-yarn.sh
+```
+
+```SHELL
+
+Starting resourcemanager
+Starting nodemanagers
+```
