@@ -496,6 +496,36 @@ $ echo $JAVA_HOME
 output will be empty.
 ```
 
+Let's add missing lines to .profile
+
+```SHELL
+$ cd $HOME
+$ vi .profile
+```
+
+```
+export HADOOP_HOME=/opt/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+ 
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+```
+
+```SHELL
+$ source .profile 
+```
+
+```SHELL
+$ echo $JAVA_HOME
+output 
+/usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+$ echo $HADOOP_HOME
+
+output
+/opt/hadoop
+```
+
+
 
 
 
