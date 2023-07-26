@@ -300,6 +300,8 @@ $ crtl - c
 
 10 - Introduction to Single Node Hadoop Cluster
 
+A ) Let's install java
+
 - Cloud9
 - Search on the bar
 - open terminal
@@ -321,6 +323,114 @@ $ javac -version
 ```
 
 
+B ) We need password less login 
+
+- Let us see how to setup password less login with in the host on which we are going to setup single node Hadoop Cluster.
+- We need password less login to run the scripts to start services such as HDFS, YARN
+- We can generate public / private keys using ssh-keygen.
+
+- Cloud9
+- Search on the bar
+- open terminal
+
+- There is not public or private key.
+
+```SHELL
+$ ls -ltr ~/.ssh
+
+total 4
+-rw------- 1 ubuntu ubuntu 991 Jul 26 16:21 authorized_keys
+```
+
+- Let's create public and private keys.
+- Run command and hit just the enter until to see below graphics :)
+```SHELL
+$ ssh-keygen
 
 
+The key's randomart image is:
++---[RSA 2048]----+
+|       ..  .o    |
+|     ..o o   o . |
+|o..=+o=.o .+o    |
++----[SHA256]-----+
+```
 
+- now we can see public and private keys.
+
+```SHELL
+$ ls -ltr ~/.ssh
+
+-rw------- 1 ubuntu ubuntu  991 Jul 26 16:21 authorized_keys
+-rw-r--r-- 1 ubuntu ubuntu  402 Jul 26 21:09 id_rsa.pub
+-rw------- 1 ubuntu ubuntu 1679 Jul 26 21:09 id_rsa
+```
+
+- We need to run this command below to append contents of ~/.ssh/id_rsa.pub to ~/.ssh/authorized_keys.
+
+```SHELL
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+
+- Let's check password less login.
+
+```SHELL
+$ ssh localhost ( same use on same host )
+$ exit
+
+$ ssh ubuntu@localhost
+$ exit
+```
+
+
+C ) download and install hadoop
+
+- https://hadoop.apache.org 
+- please download binary file.
+
+
+```SHELL
+$ wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz 
+$ ls -ltr
+$ tar xzf hadoop-3.3.0.tar.gz
+$ rm hadoop-3.3.0.tar.gz
+$ sudo mv -f hadoop-3.3.0 /opt
+$ sudo chown ${USER}:${USER} -R /opt/hadoop-3.3.0
+$ sudo ln -s /opt/hadoop-3.3.0 /opt/hadoop
+```
+
+- configure Hadoop HDFS
+
+
+vi /opt/hadoop/etc/hadoop/core-site.xml
+
+
+```XML
+?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+ <property>
+     <name>fs.defaultFS</name>
+     <configuration>
+ <property>
+     <name>fs.defaultFS</name>
+     <value>hdfs://localhost:9000</value>
+ </property>
+</configuration>
+```
