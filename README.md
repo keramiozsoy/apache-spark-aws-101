@@ -995,3 +995,73 @@ $ cd $HOME
 $ vi .profile
 $ export HIVE_HOME=/opt/hive
 $ export PATH=$PATH:${HIVE_HOME}/bin
+$ source .profile
+
+
+- Configure hive file
+
+```SHELL
+$ vi /opt/hive/conf/hive-site.xml
+```
+```XML
+<configuration>
+  <property>
+    <name>javax.jdo.option.ConnectionURL</name>
+    <value>jdbc:postgresql://localhost:6432/metastore</value>
+    <description>PostgreSQL JDBC driver connection URL</description>
+  </property>
+ 
+  <property>
+    <name>javax.jdo.option.ConnectionDriverName</name>
+    <value>org.postgresql.Driver</value>
+    <description>PostgreSQL metastore driver class name</description>
+  </property>
+ 
+  <property>
+    <name>javax.jdo.option.ConnectionUserName</name>
+    <value>hive</value>
+    <description>the username for the DB instance</description>
+  </property>
+ 
+  <property>
+    <name>javax.jdo.option.ConnectionPassword</name>
+    <value>itversity</value>
+    <description>the password for the DB instance</description>
+  </property>
+</configuration>
+```
+
+
+- We also need to overwrite guava jar in the hive lib folder with the one from Hadoop libraries.
+
+```SHELL
+$ rm /opt/hive/lib/guava-19.0.jar
+
+$  cp /opt/hadoop/share/hadoop/hdfs/lib/guava-27.0-jre.jar /opt/hive/lib/
+```
+
+
+- Now we should be able to initialize Hive Metastore Database using Postgres
+
+```SHELL
+$ hive
+
+
+wait until see all below output
+
+
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-3.1.2-bin/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-3.3.0/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Hive Session ID = 365c394d-8a38-41ab-8789-dd208cec3776
+
+Logging initialized using configuration in jar:file:/opt/apache-hive-3.1.2-bin/lib/hive-common-3.1.2.jar!/hive-log4j2.properties Async: true
+Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+hive> 
+```
+
+
+
+  
