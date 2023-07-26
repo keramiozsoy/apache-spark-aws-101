@@ -235,4 +235,15 @@ Connected to localhost.
 Escape character is '^]'.
 ```
 
--
+- We have to go running e2c instance and click, and go to Security Tab, click Security Group
+- Review Inbound Rules
+- Find Inbound Rules
+- Edit Inbound Rules
+- Add Rule
+- Type : Custom TCP
+- Port : 8888
+- Source: My IP ( it means, It will get your IP address, and it will connect only you.)
+- Save Rule.
+- Click on running EC2 instance
+- Find, Copy -> Public IPv4 DNS -> and paste to the browser. Add :8888 port end of DNS
+- 
