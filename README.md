@@ -569,3 +569,72 @@ output
 /opt/hadoop/dfs/name/current/VERSION
 ```
 
+
+- We formatted HDFS, Lets validate and start
+
+
+
+```SHELL
+$ echo $PATH
+
+
+output should include below paths.
+
+/opt/hadoop/bin
+/opt/hadoop/sbin
+```
+
+
+```SHELL
+$ ls -ltr /opt/hadoop/bin
+
+
+
+-rwxr-xr-x 1 ubuntu ubuntu  11265 Jul  6  2020 hadoop.cmd
+-rwxr-xr-x 1 ubuntu ubuntu   9034 Jul  6  2020 hadoop
+-rwxr-xr-x 1 ubuntu ubuntu   8081 Jul  6  2020 hdfs.cmd
+-rwxr-xr-x 1 ubuntu ubuntu  11274 Jul  6  2020 hdfs
+-rwxr-xr-x 1 ubuntu ubuntu  12840 Jul  6  2020 yarn.cmd
+-rwxr-xr-x 1 ubuntu ubuntu  12439 Jul  6  2020 yarn
+-rwxr-xr-x 1 ubuntu ubuntu 837840 Jul  6  2020 test-container-executor
+-rwxr-xr-x 1 ubuntu ubuntu  29200 Jul  6  2020 oom-listener
+-rwxr-xr-x 1 ubuntu ubuntu 802832 Jul  6  2020 container-executor
+-rwxr-xr-x 1 ubuntu ubuntu   6311 Jul  6  2020 mapred.cmd
+-rwxr-xr-x 1 ubuntu ubuntu   6237 Jul  6  2020 mapred
+```
+
+```SHELL
+$ ls -ltr /opt/hadoop/sbin
+
+
+-rwxr-xr-x 1 ubuntu ubuntu 1982 Jul  6  2020 workers.sh
+-rwxr-xr-x 1 ubuntu ubuntu 2166 Jul  6  2020 stop-all.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1770 Jul  6  2020 stop-all.cmd
+-rwxr-xr-x 1 ubuntu ubuntu 2221 Jul  6  2020 start-all.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1779 Jul  6  2020 start-all.cmd
+-rwxr-xr-x 1 ubuntu ubuntu 2522 Jul  6  2020 hadoop-daemons.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1983 Jul  6  2020 hadoop-daemon.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1500 Jul  6  2020 kms.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1756 Jul  6  2020 stop-secure-dns.sh
+-rwxr-xr-x 1 ubuntu ubuntu 3898 Jul  6  2020 stop-dfs.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1455 Jul  6  2020 stop-dfs.cmd
+-rwxr-xr-x 1 ubuntu ubuntu 1783 Jul  6  2020 stop-balancer.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1793 Jul  6  2020 start-secure-dns.sh
+-rwxr-xr-x 1 ubuntu ubuntu 5170 Jul  6  2020 start-dfs.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1401 Jul  6  2020 start-dfs.cmd
+-rwxr-xr-x 1 ubuntu ubuntu 1880 Jul  6  2020 start-balancer.sh
+-rwxr-xr-x 1 ubuntu ubuntu 2086 Jul  6  2020 refresh-namenodes.sh
+-rwxr-xr-x 1 ubuntu ubuntu 2756 Jul  6  2020 distribute-exclude.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1542 Jul  6  2020 httpfs.sh
+-rwxr-xr-x 1 ubuntu ubuntu 2328 Jul  6  2020 yarn-daemons.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1814 Jul  6  2020 yarn-daemon.sh
+-rwxr-xr-x 1 ubuntu ubuntu 3083 Jul  6  2020 stop-yarn.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1642 Jul  6  2020 stop-yarn.cmd
+-rwxr-xr-x 1 ubuntu ubuntu 3342 Jul  6  2020 start-yarn.sh
+-rwxr-xr-x 1 ubuntu ubuntu 1571 Jul  6  2020 start-yarn.cmd
+drwxr-xr-x 4 ubuntu ubuntu 4096 Jul  6  2020 FederationStateStore
+-rwxr-xr-x 1 ubuntu ubuntu 1841 Jul  6  2020 mr-jobhistory-daemon.sh
+```
+
+
+
