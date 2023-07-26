@@ -427,9 +427,6 @@ vi /opt/hadoop/etc/hadoop/core-site.xml
 <configuration>
  <property>
      <name>fs.defaultFS</name>
-     <configuration>
- <property>
-     <name>fs.defaultFS</name>
      <value>hdfs://localhost:9000</value>
  </property>
 </configuration>
