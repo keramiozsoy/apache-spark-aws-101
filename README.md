@@ -113,16 +113,21 @@ tmpfs            388M     0  388M   0% /run/user/1000
 
 - Look at / (root) 
 - we would like to increase storage, we are able to use Amazon EBS storage.
--  Go to EC2 Instance
--  Click running instance
--  Click section Storage
--  Click Block Devices
--  Click Volume (10 GB)
--  Edit name exising volume as
--  Click Actions -> Modify Volume
--  Increase size from 10 GiB to 32 Gib.
--  Modify.
--   
+- Go to EC2 Instance
+- Click running instance
+- Click section Storage
+- Click Block Devices
+- Click Volume (10 GB)
+- Edit name exising volume as
+- Click Actions -> Modify Volume
+- Increase size from 10 GiB to 32 Gib.
+- Modify.
+- Refresh Page and see 32 GiB.
+- The volume is increased but Cloud9 will not affected yet.
+- Go to EC2 Instance
+- Click running instance
+- Click Instance Stat -> Reboot Instance
+- 
   
 
 
