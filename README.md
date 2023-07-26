@@ -78,6 +78,21 @@ Connected to localhost.
 - Click Instance State and Stop Instance on top of page.
 - The instance will start automatically, because of Cloud9 is already active.
 - Lets check the ip and public IPv4 DNS are complately different.
+- It is hard to use Public IPv4 DNS as each time different address.
+
+5 - EC2 Instance
+- Search on the bar
+- Elastic IP Address
+- Allocate.
+- Edit Name : delabdemo
+- Click Actions > Associate Elastic IP Address.
+- Click the running instance.
+- Associate.
+- Now, Public IPv4 DNS will not be change.
+- Click the running instance. Try to reboot instance. You will use same Public IPv4 DNS
+
+
+
 
 
  
