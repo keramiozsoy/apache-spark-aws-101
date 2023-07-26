@@ -401,9 +401,11 @@ $ sudo ln -s /opt/hadoop-3.3.0 /opt/hadoop
 
 - configure Hadoop HDFS
 
+Update your core-site file as below
 
-vi /opt/hadoop/etc/hadoop/core-site.xml
-
+```SHELL
+$ vi /opt/hadoop/etc/hadoop/core-site.xml
+```
 
 ```XML
 ?xml version="1.0" encoding="UTF-8"?>
@@ -431,3 +433,51 @@ vi /opt/hadoop/etc/hadoop/core-site.xml
  </property>
 </configuration>
 ```
+
+
+Update your hdfs-site.xml 
+
+```SHELL
+$ vi  /opt/hadoop/etc/hadoop/hdfs-site.xml
+```
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/opt/hadoop/dfs/name</value>
+    </property>
+    <property>
+        <name>dfs.namenode.checkpoint.dir</name>
+        <value>/opt/hadoop/dfs/namesecondary</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/opt/hadoop/dfs/data</value>
+    </property>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+</configuration>
+```
+
+
