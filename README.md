@@ -636,5 +636,48 @@ drwxr-xr-x 4 ubuntu ubuntu 4096 Jul  6  2020 FederationStateStore
 -rwxr-xr-x 1 ubuntu ubuntu 1841 Jul  6  2020 mr-jobhistory-daemon.sh
 ```
 
+- We also need to have password less login setup with in the server using the same user who owns /opt/hadoop folder
 
+```SHELL
+$ ssh ${USER}@localhost
+
+$ exit
+```
+
+
+There is not runnning anything.
+```SHELL
+$ jps
+9646 Jps
+```
+
+- Let's start HDFS components
+
+===== 
+IF PASSWORD LESS LOGIN NOT WORK, THIS IS NOT WORK 
+======
+
+```SHELL
+start-dfs.sh
+```
+
+
+```SHELL
+
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [ip-MACHINE]
+ip-MACHINE: Warning: Permanently added 'ip-MACHINE,MACHINE' (ECDSA) to the list of known hosts.
+```
+
+- Everything works fine.
+
+```SHELL
+$ jps
+
+10149 DataNode
+9975 NameNode
+10426 SecondaryNameNode
+10703 Jps
+```
 
