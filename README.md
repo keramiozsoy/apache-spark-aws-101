@@ -681,3 +681,10 @@ $ jps
 10703 Jps
 ```
 
+```SHELL
+hdfs dfs -mkdir -p /user/${USER}
+hdfs dfs -put /opt/hadoop/etc/hadoop /user/${USER}
+hdfs dfs -cat /user/${USER}/hadoop/core-site.xml
+hdfs dfs -rm -R -skipTrash /user/${USER}/hadoop
+hdfs dfs -ls /user/${USER}
+```
