@@ -20,9 +20,12 @@
 
 3 - EC2 Instance
 - Search on the bar
-- Click running instance
+- Click on running EC2 instance
 - You will see the ec2 instance. We have just created previous step with AWS Cloud9
-- Find and Copy -> Public IPv4 DNS
+- Find, Copy -> Public IPv4 DNS -> and paste to the browser.
+- It will not work.
+
+
 
 4 - Open terminal on AWS Cloud9
 - whenever you provisioned an instance on aws, you will be getting The Apache HTTP Server up and running.
@@ -50,3 +53,19 @@ $ telnet localhost 80
 Trying 127.0.0.1...
 Connected to localhost.
 ```
+
+- It will not work. The reason is the por is not opened as part of the security group.
+- Search on the bar
+- Click on running EC2 instance
+- Click Security Tab -> Click Security Groups
+- Security Group is firewall within the system.
+- Find Inbound Rules
+- Edit Inbound Rules
+- Add Rule
+- Type : HTTP
+- Source: My IP ( it means, It will get your IP address, and it will connect only you.)
+- Save Rule.
+
+
+
+
