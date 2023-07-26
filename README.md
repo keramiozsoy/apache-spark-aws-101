@@ -526,6 +526,18 @@ output
 ```
 
 
+- Update JAVA_HOME in hadoop-env.sh and add to the end of file
+
+```SHELL
+vi /opt/hadoop/etc/hadoop/hadoop-env.sh
+```
+
+```SHELL
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export HADOOP_OS_TYPE=${HADOOP_OS_TYPE:-$(uname -s)}
+```
+
+
 
 
 
