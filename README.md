@@ -14,7 +14,7 @@
 - Instance Type  : t3.medium ( 4 GiB RAM  + 2 vCPU )
 - Platform : Ubuntu Server 18.04 LTS
 - Timeout  : 30 minutes
-- Press Create and wait to compleate process.
+- Press Create and wait to complate process.
 - Click and open Cloud9 IDE.
 
 
