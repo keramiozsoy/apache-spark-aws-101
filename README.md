@@ -171,6 +171,9 @@ $ find delab-venv/
 
 
 $ find delab-venv/
+
+
+
 delab-venv/
 delab-venv/bin
 delab-venv/bin/pip3
@@ -184,6 +187,8 @@ delab-venv/bin/activate
 
 ```SHELL
 $ ls -ltr delab-venv/bin
+
+
 total 32
 lrwxrwxrwx 1 ubuntu ubuntu   16 Jul 26 17:49 python3 -> /usr/bin/python3
 lrwxrwxrwx 1 ubuntu ubuntu    7 Jul 26 17:49 python -> python3
@@ -307,8 +312,14 @@ A ) Let's install java
 - open terminal
 
 ```SHELL
+$ sudo apt-get update
+```
+
+
+```SHELL
 $ sudo apt-get install wget
 ```
+
 ```SHELL
 $ sudo apt-get install openjdk-8-jdk -y
 
