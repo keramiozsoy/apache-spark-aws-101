@@ -327,9 +327,15 @@ $ sudo apt-get install openjdk-8-jdk -y
 
 ```SHELL
 $ sudo update-alternatives --config java
+
+choose java-8
+
 $ java -version
 
 $ sudo update-alternatives --config javac
+
+choose java-8
+
 $ javac -version
 ```
 
@@ -354,8 +360,10 @@ total 4
 ```
 
 - Let's create public and private keys.
-- Run command and hit just the enter until to see below graphics :)
+- Run command and hit just the enter until to see below graphics 
+
 ```SHELL
+
 $ ssh-keygen
 
 
@@ -365,6 +373,7 @@ The key's randomart image is:
 |     ..o o   o . |
 |o..=+o=.o .+o    |
 +----[SHA256]-----+
+
 ```
 
 - now we can see public and private keys.
@@ -514,7 +523,7 @@ $ cd $HOME
 $ vi .profile
 ```
 
-```
+```SHELL
 export HADOOP_HOME=/opt/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
  
@@ -527,6 +536,7 @@ $ source .profile
 
 ```SHELL
 $ echo $JAVA_HOME
+
 output 
 /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
