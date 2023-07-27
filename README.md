@@ -1108,6 +1108,8 @@ Use --verbose for detailed stacktrace.
 *** schemaTool failed ***
 ````
 
+https://stackoverflow.com/questions/64210167/unable-to-connect-to-postgres-db-due-to-the-authentication-type-10-is-not-suppor
+
 
 
   
