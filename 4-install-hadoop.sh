@@ -1,5 +1,6 @@
 #!/bin/sh
 
+cd $HOME
 wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz 
 ls -ltr
 tar xzf hadoop-3.3.0.tar.gz
