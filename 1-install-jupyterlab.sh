@@ -1,3 +1,5 @@
+#!/bin/sh
+
 mkdir delab
 cd delab
 python3 -m venv delab-venv
