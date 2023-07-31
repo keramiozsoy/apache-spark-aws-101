@@ -41,10 +41,13 @@ vi /opt/hadoop/etc/hadoop/core-site.xml
  </property>
 </configuration>
 ```
-
+```SHELL
 :wq
+```
 
+```SHELL
 vi  /opt/hadoop/etc/hadoop/hdfs-site.xml
+```
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
