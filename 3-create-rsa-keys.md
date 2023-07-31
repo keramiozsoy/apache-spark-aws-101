@@ -1,4 +1,4 @@
-#!/bin/sh
+# create-rsa-keys
 
 cd $HOME
 ls -ltr ~/.ssh
