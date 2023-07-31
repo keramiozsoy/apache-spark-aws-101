@@ -254,3 +254,50 @@ vi /opt/hadoop/etc/hadoop/mapred-site.xml
 ```SHELL
 start-yarn.sh
 ```
+
+
+```SHELL
+jps
+```
+
+```SHELL
+hdfs dfs -ls /user
+```
+```SHELL
+stop-yarn.sh
+```
+```SHELL
+stop-dfs.sh
+```
+
+```SHELL
+start-dfs.sh
+```
+```SHELL
+start-yarn.sh
+```
+```SHELL
+cd $HOME
+```
+
+```SHELL
+git clone https://github.com/dgadiraju/retail_db.git
+ls -ltr retail_db
+sudo rm -rf /data/retail_db
+sudo mkdir -p /data/retail_db
+ls -ltr /data
+sudo cp -rf retail_db/departments /data/retail_db
+sudo cp -rf retail_db/categories /data/retail_db
+sudo cp -rf retail_db/products /data/retail_db
+sudo cp -rf retail_db/orders /data/retail_db
+sudo cp -rf retail_db/order_items /data/retail_db
+sudo cp -rf retail_db/customers /data/retail_db
+```
+```SHELL
+hdfs dfs -mkdir -p /public
+hdfs dfs -put /data/retail_db /public
+hdfs dfs -ls /public/retail_db/orders
+hdfs dfs -find /public/retail_db
+hdfs dfs -cat /public/retail_db/departments/part-00000
+```
+
