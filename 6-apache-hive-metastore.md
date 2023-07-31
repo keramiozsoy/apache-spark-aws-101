@@ -17,9 +17,11 @@ docker create \
     -e POSTGRES_PASSWORD=itversity \
     postgres
 ```
+
 ```SHELL
 docker start cluster_util_db
 ```
+
 ```SHELL
 docker logs -f cluster_util_db
 ```
@@ -28,7 +30,7 @@ docker logs -f cluster_util_db
 docker exec \
     -it cluster_util_db \
     psql -U postgres
-```SHELL
+```
 
 ```SHELL
 CREATE DATABASE metastore;
