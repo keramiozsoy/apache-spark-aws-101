@@ -38,6 +38,11 @@ CREATE USER hive WITH ENCRYPTED PASSWORD 'itversity';
 GRANT ALL ON DATABASE metastore TO hive;
 ```
 
+
+```SHELL
+exit
+```
+
 ```SHELL
 sudo apt install postgresql-client -y
 ```
