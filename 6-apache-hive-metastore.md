@@ -69,9 +69,10 @@ vi .profile
 ```
 
 ```SHELL
-$ export HIVE_HOME=/opt/hive
-$ export PATH=$PATH:${HIVE_HOME}/bin
+export HIVE_HOME=/opt/hive
+export PATH=$PATH:${HIVE_HOME}/bin
 ```
+
 ```SHELL
 source .profile
 ```
