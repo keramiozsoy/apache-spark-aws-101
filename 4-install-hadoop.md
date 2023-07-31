@@ -1,4 +1,4 @@
-#!/bin/sh
+# install-hadoop
 
 cd $HOME
 wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz 
