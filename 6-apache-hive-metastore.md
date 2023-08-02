@@ -78,6 +78,7 @@ source .profile
 ```
 
 ```SHELL
+rm /opt/hive/conf/hive-site.xml
 vi /opt/hive/conf/hive-site.xml
 ```
 
