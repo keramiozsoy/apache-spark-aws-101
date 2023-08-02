@@ -166,4 +166,8 @@ exit
 
 ```SHELL
 schematool -dbType postgres -initSchema
+
+# output
+# beeline> Initialization script completed
+# schemaTool completed
 ```
