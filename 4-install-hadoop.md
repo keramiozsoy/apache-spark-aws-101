@@ -191,6 +191,7 @@ hdfs dfs -ls /user/${USER}
 
 
 ```SHELL
+rm /opt/hadoop/etc/hadoop/yarn-site.xml
 vi /opt/hadoop/etc/hadoop/yarn-site.xml
 ```
 
