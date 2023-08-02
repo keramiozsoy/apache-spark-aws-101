@@ -1268,6 +1268,8 @@ exit;
 
 - We need scripts to start and to stop system.
  
+# start-stop-sh
+
 ```SHELL
 touch stop_all.sh
 ```
@@ -1277,7 +1279,7 @@ vi stop_all.sh
 ```
 
 ```SHELL
-# ORDER IMPORTANT
+# order of sh commands is important here. Yarn is depended to hdfs.
 stop-yarn.sh
 stop-dfs.sh
 jps
@@ -1289,9 +1291,14 @@ touch start_all.sh
 ```
 
 ```SHELL
+vi start_all.sh
+```
+
+```SHELL
 start-dfs.sh
 start-yarn.sh
 docker start cluster_util_db
 jps
 docker ps
 ```
+
