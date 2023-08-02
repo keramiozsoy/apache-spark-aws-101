@@ -1135,6 +1135,9 @@ exit
 
 - Create hive metadata tables on our postgres which is called metastore.
 
+- We will use schemetool which creates metadata tables of apache hive
+- https://github.com/apache/hive/blob/master/bin/schematool
+
 ```SHELL
 schematool -dbType postgres -initSchema
 
@@ -1236,3 +1239,4 @@ metastore=# \d
  public | write_set                     | table    | hive
 (75 rows)
 ```
+
