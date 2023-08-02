@@ -12,11 +12,12 @@ sudo chown ${USER}:${USER} -R /opt/hadoop-3.3.0
 sudo ln -s /opt/hadoop-3.3.0 /opt/hadoop
 ```
 ```SHELL
+rm /opt/hadoop/etc/hadoop/core-site.xml
 vi /opt/hadoop/etc/hadoop/core-site.xml
 ```
 
 ```XML
-?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!--
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,7 +47,8 @@ vi /opt/hadoop/etc/hadoop/core-site.xml
 ```
 
 ```SHELL
-vi  /opt/hadoop/etc/hadoop/hdfs-site.xml
+rm /opt/hadoop/etc/hadoop/hdfs-site.xml
+vi /opt/hadoop/etc/hadoop/hdfs-site.xml
 ```
 
 ```XML
@@ -135,9 +137,6 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export HADOOP_OS_TYPE=${HADOOP_OS_TYPE:-$(uname -s)}
 ```
 
-```SHELL
-ls -ltr /opt/hadoop/dfs/
-```
 
 ```SHELL
 hdfs --help
@@ -145,10 +144,6 @@ hdfs --help
 
 ```SHELL
 hdfs namenode -format
-```
-
-```SHELL
-find /opt/hadoop/dfs
 ```
 
 ```SHELL
@@ -160,6 +155,10 @@ ls -ltr /opt/hadoop/bin
 
 ```SHELL
 ls -ltr /opt/hadoop/sbin
+```
+
+```SHELL
+ls -ltr /opt/hadoop/dfs/
 ```
 
 ```SHELL
@@ -192,6 +191,7 @@ hdfs dfs -ls /user/${USER}
 
 
 ```SHELL
+rm /opt/hadoop/etc/hadoop/yarn-site.xml
 vi /opt/hadoop/etc/hadoop/yarn-site.xml
 ```
 
@@ -227,6 +227,7 @@ vi /opt/hadoop/etc/hadoop/yarn-site.xml
 
 
 ```SHELL
+rm /opt/hadoop/etc/hadoop/mapred-site.xml
 vi /opt/hadoop/etc/hadoop/mapred-site.xml
 ```
 
