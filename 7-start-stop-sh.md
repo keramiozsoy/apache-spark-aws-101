@@ -9,7 +9,7 @@ vi stop_all.sh
 ```
 
 ```SHELL
-# ORDER IMPORTANT
+# order of sh commands is important here. Yarn is depended to hdfs.
 stop-yarn.sh
 stop-dfs.sh
 jps
