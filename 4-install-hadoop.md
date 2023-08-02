@@ -227,6 +227,7 @@ vi /opt/hadoop/etc/hadoop/yarn-site.xml
 
 
 ```SHELL
+rm /opt/hadoop/etc/hadoop/mapred-site.xml
 vi /opt/hadoop/etc/hadoop/mapred-site.xml
 ```
 
