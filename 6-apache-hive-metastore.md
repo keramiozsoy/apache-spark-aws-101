@@ -52,8 +52,27 @@ alter role postgres with password '6d02743f4d0b67598b73f84c68b2c938';
 ```SHELL
 CREATE DATABASE metastore;
 CREATE USER hive WITH PASSWORD '6d02743f4d0b67598b73f84c68b2c938';
-GRANT ALL ON DATABASE metastore TO hive;
-GRANT USAGE ON SCHEMA public TO hive;
+ALTER USER hive WITH SUPERUSER;
+
+# LIST OF USEFULL COMMANDS
+# 1. Grant CONNECT to the database:
+# GRANT CONNECT ON DATABASE database_name TO username;
+# 2. Grant USAGE on schema:
+# GRANT USAGE ON SCHEMA schema_name TO username;
+# 3. Grant on all tables for DML statements: SELECT, INSERT, UPDATE, DELETE:
+# GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA schema_name TO username;
+# 4. Grant all privileges on all tables in the schema:
+# GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA schema_name TO username;
+# 5. Grant all privileges on all sequences in the schema:
+# GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA schema_name TO username;
+# 6. Grant all privileges on the database:
+# GRANT ALL PRIVILEGES ON DATABASE database_name TO username;
+# 7. Grant permission to create database:
+# ALTER USER username CREATEDB;
+# 8. Make a user superuser:
+# ALTER USER myuser WITH SUPERUSER;
+# 9.Remove superuser status:
+# ALTER USER username WITH NOSUPERUSER;
 ```
 
 
