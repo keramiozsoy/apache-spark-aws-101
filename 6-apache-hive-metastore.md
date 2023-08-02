@@ -34,7 +34,7 @@ docker exec \
 
 ```SHELL
 CREATE DATABASE metastore;
-CREATE USER hive WITH ENCRYPTED PASSWORD 'itversity';
+CREATE USER hive WITH PASSWORD '6d02743f4d0b67598b73f84c68b2c938';
 GRANT ALL ON DATABASE metastore TO hive;
 ```
 
@@ -56,7 +56,7 @@ psql -h localhost \
     -U hive \
     -W
 
-itversity
+6d02743f4d0b67598b73f84c68b2c938
 
 \q
 ```
@@ -104,7 +104,7 @@ vi /opt/hive/conf/hive-site.xml
  
   <property>
     <name>javax.jdo.option.ConnectionPassword</name>
-    <value>itversity</value>
+    <value>6d02743f4d0b67598b73f84c68b2c938</value>
     <description>the password for the DB instance</description>
   </property>
 </configuration>
