@@ -21,6 +21,10 @@ touch start_all.sh
 ```
 
 ```SHELL
+vi start_all.sh
+```
+
+```SHELL
 start-dfs.sh
 start-yarn.sh
 docker start cluster_util_db
