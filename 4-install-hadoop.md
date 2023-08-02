@@ -147,10 +147,6 @@ hdfs namenode -format
 ```
 
 ```SHELL
-find /opt/hadoop/dfs
-```
-
-```SHELL
 echo $PATH
 ```
 ```SHELL
