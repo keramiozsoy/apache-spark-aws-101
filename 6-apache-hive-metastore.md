@@ -53,6 +53,7 @@ alter role postgres with password '6d02743f4d0b67598b73f84c68b2c938';
 CREATE DATABASE metastore;
 CREATE USER hive WITH PASSWORD '6d02743f4d0b67598b73f84c68b2c938';
 GRANT ALL ON DATABASE metastore TO hive;
+GRANT USAGE ON SCHEMA public TO hive;
 ```
 
 
