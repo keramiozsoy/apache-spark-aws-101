@@ -1,6 +1,7 @@
 # install-apache-hive
 
 ```SHELL
+cd $HOME
 wget https://archive.apache.org/dist/hive/hive-3.1.2/apache-hive-3.1.2-bin.tar.gz
 ls -ltr
 tar xzf apache-hive-3.1.2-bin.tar.gz
