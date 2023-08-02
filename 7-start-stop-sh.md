@@ -15,6 +15,11 @@ stop-dfs.sh
 jps
 ```
 
+```SHELL
+source stop_all.sh
+```
+
+
 
 ```SHELL
 touch start_all.sh
@@ -30,4 +35,8 @@ start-yarn.sh
 docker start cluster_util_db
 jps
 docker ps
+```
+
+```SHELL
+source start_all.sh
 ```
