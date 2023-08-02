@@ -1267,8 +1267,6 @@ exit;
 ```
 
 - We need scripts to start and to stop system.
- 
-# start-stop-sh
 
 ```SHELL
 touch stop_all.sh
@@ -1284,6 +1282,11 @@ stop-yarn.sh
 stop-dfs.sh
 jps
 ```
+
+```SHELL
+source stop_all.sh
+```
+
 
 
 ```SHELL
@@ -1302,3 +1305,6 @@ jps
 docker ps
 ```
 
+```SHELL
+source start_all.sh
+```
