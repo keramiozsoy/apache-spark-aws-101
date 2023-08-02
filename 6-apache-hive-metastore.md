@@ -15,6 +15,7 @@ docker create \
     --name cluster_util_db \
     -p 6432:5432 \
     -e POSTGRES_PASSWORD=itversity \
+    -e POSTGRES_HOST_AUTH_METHOD=md5 \
     postgres
 ```
 
@@ -27,9 +28,25 @@ docker logs -f cluster_util_db
 ```
 
 ```SHELL
+ docker exec -it -u postgres cluster_util_db \
+ 	bash -c "echo 'password_encryption=md5' >> /var/lib/postgresql/data/postgresql.conf"
+```
+
+```SHELL
+ docker restart cluster_util_db
+```
+
+```SHELL
 docker exec \
     -it cluster_util_db \
     psql -U postgres
+```
+
+```SHELL
+
+#itversity > md5 generate > 6d02743f4d0b67598b73f84c68b2c938
+
+alter role postgres with password '6d02743f4d0b67598b73f84c68b2c938';
 ```
 
 ```SHELL
