@@ -56,8 +56,16 @@ spark.yarn.jars hdfs:///spark2-jars/*.jar
 
 - We also need to create directories for logs and jars in HDFS. Also, Spark jars should be copied to HDFS folder provided as part of spark.yarn.jars
 
+
+- We have created earlier steop start_all.sh
+
+```
+source start_all.sh
+```
+
+
 ```SHELL
-hdfs dfs -mkdir /spark2-jars
+hdfs dfs -mkdir /spark2-jars # If you see Name node is in safe mode. wait and try again it works.
 hdfs dfs -mkdir /spark2-logs
  
 hdfs dfs -put /opt/spark2/jars/* /spark2-jars
