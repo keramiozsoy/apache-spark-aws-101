@@ -1,4 +1,4 @@
-# install apache spark single node cluster
+# install apache spark2 single node cluster
 
 ```SHELL
 cd $HOME
