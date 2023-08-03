@@ -41,4 +41,7 @@ vi $HOME/$USER/delab-venv/share/jupyter/kernels/pyspark2/kernel.json
 }
 ```
 
+```SHELL
+jupyter kernelspec install $HOME/$USER/delab-venv/share/jupyter/kernels/pyspark2 --user
+```
   
