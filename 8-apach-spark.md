@@ -84,6 +84,87 @@ hdfs dfs -ls /spark2-jars
 ```SHELL
 sudo ln -s /opt/hive/conf/hive-site.xml /opt/spark2/conf/
 ```
+
+```SHELL
+ls -ltr /opt/hive/lib | grep posgtres
+
+# postgresql-9.4.1208.jre7.jar is not compatible.
+```
+
+-  download latest version of postgresql driver for java 8 , we have aldready installed java 8 and set as $JAVA_HOME 
+
 ```SHELL
 sudo wget https://jdbc.postgresql.org/download/postgresql-42.2.19.jar -O /opt/spark2/jars/postgresql-42.2.19.jar
+```
+
+
+- Validate Spark using Scala by running
+
+```SHELL
+/opt/spark2/bin/spark-shell --master yarn --conf spark.ui.port=0
+```
+
+```SHELL
+spark.sql("show databases").show()
+```
+
+```SHELL
++------------+
+|databaseName|
++------------+
+|     default|
+|   retail_db|
++------------+
+```
+
+```SHELL
+spark.sql("use retail_db)
+```
+
+```SHELL
+spark.sql("select * from orders).show()
+```
+
+```SHELL
+quit;
+```
+
+- Validate Spark using Python by running
+
+```SHELL
+sudo ln -s /usr/bin/python3 /usr/bin/python
+```
+
+```SHELL
+/opt/spark2/bin/pyspark --master yarn --conf spark.ui.port=0
+```
+
+```SHELL
+spark.sql('show databases').show()
+```
+
+```SHELL
++------------+
+|databaseName|
++------------+
+|     default|
+|   retail_db|
++------------+
+```
+
+```SHELL
+## retaildb.orders connects directly table of retaildb
+spark.sql('select count(1) from retaildb.orders').show(); 
+```
+
+
+```SHELL
+exit;
+```
+
+
+- Validate Spark using Spark-Sql by running
+
+```SHELL
+/opt/spark2/bin/spark-sql  --master yarn -conf spark.ui.port=0
 ```
