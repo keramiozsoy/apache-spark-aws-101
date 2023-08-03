@@ -54,3 +54,21 @@ jupyter kernelspec list
 ```
 
 - open jupyter lab ui on browser and you will see pyspark2 notebook.
+
+```PYTHON
+from pyspark.sql import SparkSession
+```
+```PYTHON
+spark = SparkSession. \
+    builder. \
+    enableHiveSupport(). \
+    appName('Demo'). \
+    master('yarn'). \
+    getOrCreate()
+```
+```PYTHON
+spark.sql('SHOW databases').show()
+```
+```PYTHON
+spark.sql('SELECT count(1) FROM retail_db.orders').show()
+```
