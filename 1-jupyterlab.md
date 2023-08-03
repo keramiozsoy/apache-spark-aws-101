@@ -12,3 +12,6 @@ pip install jupyterlab
 nohup jupyter lab --ip 0.0.0.0 &
 ```
 
+```SHELL
+pip list | grep jupyter
+```
