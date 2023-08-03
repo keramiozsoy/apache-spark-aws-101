@@ -36,6 +36,7 @@ docker start cluster_util_db
 jps
 docker ps
 nohup ~/delab-venv/bin/jupyter lab --ip 0.0.0.0. &
+tail nohup.out
 ```
 
 ```SHELL
