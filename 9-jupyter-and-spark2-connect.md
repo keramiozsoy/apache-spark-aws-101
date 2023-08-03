@@ -1,4 +1,4 @@
-# jupyter and spark connect
+# jupyter and spark2 connect
 
 
 - there is only python3 kernel
