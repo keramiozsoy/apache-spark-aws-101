@@ -1,4 +1,4 @@
-# install apache spark
+# install apache spark single node cluster
 
 ```SHELL
 cd $HOME
@@ -167,4 +167,8 @@ exit;
 
 ```SHELL
 /opt/spark2/bin/spark-sql  --master yarn -conf spark.ui.port=0
+```
+
+```SHELL
+select count(1) from retaildb.orders;
 ```
