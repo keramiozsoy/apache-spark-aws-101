@@ -58,3 +58,81 @@ hdfs dfs -put /opt/spark3/jars/* /spark3-jars
 sudo ln -s /opt/hive/conf/hive-site.xml /opt/spark3/conf/
 sudo wget https://jdbc.postgresql.org/download/postgresql-42.2.19.jar -O /opt/spark3/jars/postgresql-42.2.19.jar
 ```
+
+
+
+
+- Validate Spark using Scala by running
+
+```SHELL
+/opt/spark3/bin/spark-shell --master yarn --conf spark.ui.port=0
+```
+
+```SHELL
+spark.sql("show databases").show()
+```
+
+```SHELL
++------------+
+|databaseName|
++------------+
+|     default|
+|   retail_db|
++------------+
+```
+
+```SHELL
+spark.sql("use retail_db)
+```
+
+```SHELL
+spark.sql("select * from orders).show()
+```
+
+```SHELL
+quit;
+```
+
+- Validate Spark using Python by running
+
+```SHELL
+sudo ln -s /usr/bin/python3 /usr/bin/python
+```
+
+```SHELL
+/opt/spark3/bin/pyspark --master yarn --conf spark.ui.port=0
+```
+
+```SHELL
+spark.sql('show databases').show()
+```
+
+```SHELL
++------------+
+|databaseName|
++------------+
+|     default|
+|   retail_db|
++------------+
+```
+
+```SHELL
+## retaildb.orders connects directly table of retaildb
+spark.sql('select count(1) from retaildb.orders').show(); 
+```
+
+
+```SHELL
+exit;
+```
+
+
+- Validate Spark using Spark-Sql by running
+
+```SHELL
+/opt/spark3/bin/spark-sql  --master yarn -conf spark.ui.port=0
+```
+
+```SHELL
+select count(1) from retaildb.orders;
+```
