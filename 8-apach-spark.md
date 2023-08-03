@@ -63,18 +63,27 @@ spark.yarn.jars hdfs:///spark2-jars/*.jar
 source start_all.sh
 ```
 
-
 ```SHELL
 hdfs dfs -mkdir /spark2-jars # If you see Name node is in safe mode. wait and try again it works.
+```
+```SHELL
 hdfs dfs -mkdir /spark2-logs
- 
+```
+```SHELL
 hdfs dfs -put /opt/spark2/jars/* /spark2-jars
 ```
+
+- check jars
+```SHELL
+hdfs dfs -ls /spark2-jars
+```
+
 - By default we will not be able to access Hive Metastore tables and databases using Spark.
 - We need to perform below steps to integrate Spark with Hive Metastore.
 
 ```SHELL
 sudo ln -s /opt/hive/conf/hive-site.xml /opt/spark2/conf/
-
+```
+```SHELL
 sudo wget https://jdbc.postgresql.org/download/postgresql-42.2.19.jar -O /opt/spark2/jars/postgresql-42.2.19.jar
 ```
