@@ -18,3 +18,7 @@ sudo mv -f spark-2.4.7-bin-hadoop2.7 /opt
 ```SHELL
 sudo ln -s spark-2.4.7-bin-hadoop2.7 /opt/spark2
 ```
+
+```SHELL
+ls -ltr /opt/spark2/bin
+```
