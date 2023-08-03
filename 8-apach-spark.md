@@ -1,4 +1,4 @@
-# install apache spark
+# install apache spark with yarn mode
 
 ```SHELL
 cd $HOME
