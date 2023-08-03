@@ -41,7 +41,16 @@ vi $HOME/$USER/delab-venv/share/jupyter/kernels/pyspark2/kernel.json
 }
 ```
 
+
+
 ```SHELL
 jupyter kernelspec install $HOME/$USER/delab-venv/share/jupyter/kernels/pyspark2 --user
 ```
+
+- let's check
   
+```SHELL
+jupyter kernelspec list
+```
+
+- open jupyter lab ui on browser and you will see pyspark2 notebook.
