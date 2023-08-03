@@ -1,4 +1,4 @@
-# install apache spark with yarn mode
+# install apache spark
 
 ```SHELL
 cd $HOME
@@ -22,6 +22,8 @@ sudo ln -s spark-2.4.7-bin-hadoop2.7 /opt/spark2
 ```SHELL
 ls -ltr /opt/spark2/bin
 ```
+
+- Apache Spark will work with apache hadoop mode
 
 ```SHELL
 vi /opt/spark2/conf/spark-env.sh
