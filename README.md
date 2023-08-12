@@ -1,4 +1,4 @@
-# apache-spark-aws-101
+# apache-spark-aws-yarn-101
 
 - resource https://github.com/itversity/spark-sql
 
