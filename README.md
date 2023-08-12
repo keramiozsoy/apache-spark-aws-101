@@ -1,5 +1,6 @@
 # apache-spark-aws-101
 
+- resource https://github.com/itversity/spark-sql
 
 
 
