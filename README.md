@@ -1,5 +1,7 @@
 # apache-spark-yarn-mode-aws-101
 
+An example of installation Apache Spark on AWS
+
 - resource https://github.com/itversity/spark-sql
 
 
